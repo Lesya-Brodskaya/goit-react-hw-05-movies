@@ -1,4 +1,4 @@
-import Input from './SearchInput.styled';
+import { Input } from './SearchInput.styled';
 
 const SearchInput = () => (
   <Input

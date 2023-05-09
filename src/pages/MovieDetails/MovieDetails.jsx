@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import { fetchMovieDetails } from '../API';
+import { fetchMovieDetails } from 'services/API';
 import {
   Button,
   LinkBack,

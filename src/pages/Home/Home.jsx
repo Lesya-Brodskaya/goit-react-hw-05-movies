@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { fetchMoviesTrending } from '../API';
-import Loader from '../Loader';
+import { fetchMoviesTrending } from 'services/API';
+import Loader from 'components/Loader';
 import { Title, MovieList, MovieLink } from './Home.styled';
 
 const Home = () => {

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import { fetchMovieByQuery } from '../API';
-import { Loader } from '../Loader';
-import SearchBar from '../SearchBar';
-import { MovieList, MovieLink } from './Home.styled';
+import { fetchMovieByQuery } from 'services/API';
+import Loader from 'components/Loader';
+import SearchBar from 'components/SearchBar';
+import { MovieList, MovieLink } from 'pages/Home/Home.styled';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
