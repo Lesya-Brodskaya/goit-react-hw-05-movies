@@ -5,7 +5,7 @@ import { fetchMovieCast } from 'services/API';
 import { CastList, CastItem, Name, Character } from './Cast.styled';
 
 const Cast = () => {
-  const [castList, setCastList] = useState;
+  const [castList, setCastList] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Cast = () => {
 
   return (
     <CastList>
-      {castList.lenght > 0
+      {castList.length > 0
         ? castList.map(({ id, name, profile_path, character }) => (
             <CastItem key={id}>
               <img

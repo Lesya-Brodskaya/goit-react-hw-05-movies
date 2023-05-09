@@ -11,8 +11,10 @@ const Home = () => {
 
   useEffect(() => {
     setIsLoading(true);
+
     fetchMoviesTrending().then(data => {
       setMoviesTrending(data.results);
+
       setIsLoading(false);
     });
   }, []);
