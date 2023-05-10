@@ -36,7 +36,7 @@ const Movies = () => {
   }, [movieName]);
 
   const handleSubmit = query => {
-    setSearchParams({ movieName: query.movieName.value });
+    setSearchParams({ movieName: query });
   };
 
   return (
