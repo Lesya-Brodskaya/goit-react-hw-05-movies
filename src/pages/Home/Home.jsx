@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <main>
       <Title>Top Movies for today</Title>
-      <MovieList movies={movies} loading={isLoading}></MovieList>
+      <MovieList movies={movies} />
       {isLoading && <Loader />}
     </main>
   );
