@@ -17,22 +17,25 @@ const Movies = () => {
     if (movieName === '') {
       return;
     }
-    setMoviesList([]);
     setIsLoading(true);
 
-    fetchMovieByQuery(movieName).then(data => {
-      if (!data.results.length) {
-        setIsLoading(false);
-        setError(true);
-        return console.log(
-          'There are no movies with this request. Please,1 try again.'
-        );
-      }
+    fetchMovieByQuery(movieName)
+      .then(data => {
+        if (!data.results.length) {
+          setError(true);
+          return console.log(
+            'There are no movies with this request. Please,1 try again.'
+          );
+        }
 
-      setError(false);
-      setMoviesList(data.results);
-      setIsLoading(false);
-    });
+        setMoviesList(data.results);
+      })
+      .catch(error => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, [movieName]);
 
   const handleSubmit = query => {

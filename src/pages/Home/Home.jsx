@@ -11,11 +11,16 @@ const Home = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetchMoviesTrending().then(data => {
-      setMoviesTrending(data.results);
-
-      setIsLoading(false);
-    });
+    fetchMoviesTrending()
+      .then(data => {
+        setMoviesTrending(data.results);
+      })
+      .catch(error => {
+        error(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
   return (
