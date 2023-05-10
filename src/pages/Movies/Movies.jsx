@@ -43,7 +43,7 @@ const Movies = () => {
     <main>
       <SearchBar onSubmit={handleSubmit} />
       {error && <>There are no movies with this request. Please, try again.</>}
-      <MovieList trending={movies} loading={isLoading}></MovieList>
+      <MovieList movies={movies} />
       {isLoading && <Loader />}
     </main>
   );
