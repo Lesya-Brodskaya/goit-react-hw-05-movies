@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Form } from './SearchForm.styled';
 
-const SearchForm = ({ onSubmit, children }) => {
+const SearchForm = ({ onSubmit, children, event }) => {
   event.preventDefault();
   const searchForm = event.currentTarget;
 
