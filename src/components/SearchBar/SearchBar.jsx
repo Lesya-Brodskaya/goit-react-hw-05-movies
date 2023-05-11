@@ -22,7 +22,7 @@ const SearchBar = ({ onSubmit }) => {
   return (
     <>
       <SearchForm onSubmit={handleSubmit} onChange={handleChange}>
-        <SearchInput />
+        <SearchInput onChange={handleChange} />
         <ButtonIcon type="submit" aria-label="search button">
           <BsSearch />
         </ButtonIcon>
