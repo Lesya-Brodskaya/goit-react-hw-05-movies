@@ -1,6 +1,6 @@
 import { Input } from './SearchInput.styled';
 
-const SearchInput = () => (
+const SearchInput = ({ onChange }) => (
   <Input
     type="text"
     name="movieName"
@@ -10,6 +10,7 @@ const SearchInput = () => (
     autoComplete="off"
     autoFocus
     placeholder="Search movie..."
+    onChange={onChange}
   />
 );
 

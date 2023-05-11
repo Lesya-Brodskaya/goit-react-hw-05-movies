@@ -14,7 +14,7 @@ const Movies = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (movieName === '') {
+    if (!movieName) {
       return;
     }
     setIsLoading(true);
@@ -24,7 +24,7 @@ const Movies = () => {
         if (!data.results.length) {
           setError(true);
           return console.log(
-            'There are no movies with this request. Please,1 try again.'
+            'There are no movies with this request. Please,i try again.'
           );
         }
 
@@ -46,7 +46,7 @@ const Movies = () => {
     <main>
       <SearchBar onSubmit={handleSubmit} />
       {error && <>There are no movies with this request. Please, try again.</>}
-      <MovieList movies={movies} />
+      {movies.length > 0 && <MovieList movies={movies} />}
       {isLoading && <Loader />}
     </main>
   );
